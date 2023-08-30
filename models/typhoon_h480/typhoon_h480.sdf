@@ -160,9 +160,16 @@
           </pressure>
         </air_pressure>
       </sensor>
+      <!-- <sensor name="imu_sensor" type="imu">
+        <always_on>1</always_on>
+        <update_rate>250</update_rate>
+      </sensor> -->
       <sensor name="imu_sensor" type="imu">
         <always_on>1</always_on>
         <update_rate>250</update_rate>
+        <visualize>true</visualize>
+        <!-- <topic>typhoon/imu</topic> -->
+        <enable_metrics>true</enable_metrics>
       </sensor>
     </link>
 
@@ -640,7 +647,7 @@
       </physics>
     </joint>
 
-    <link name='typhoon_h480/imu_link'>
+    <link name='imu_link'>
       <pose>0 0 0 0 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
@@ -654,9 +661,14 @@
           <izz>1e-05</izz>
         </inertia>
       </inertial>
+      <!-- <sensor name="imu_sensor" type="imu">
+        <always_on>1</always_on>
+        <imuTopic>/imu</imuTopic> 
+        <update_rate>250</update_rate>
+      </sensor> -->
     </link>
-    <joint name='typhoon_h480/imu_joint' type='revolute'>
-      <child>typhoon_h480/imu_link</child>
+    <joint name='imu_joint' type='fixed'>
+      <child>imu_link</child>
       <parent>base_link</parent>
       <axis>
         <xyz>1 0 0</xyz>
@@ -1136,7 +1148,7 @@
     <plugin filename="shutdown-multicopter-motor-model-system.so" name="gz::sim::systems::MulticopterMotorModel">
       <jointName>rotor_0_joint</jointName>
       <linkName>rotor_0</linkName>
-      <robotNamespace>typhoon</robotNamespace>
+      <robotNamespace>typhoon_h480</robotNamespace>
       <turningDirection>cw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
@@ -1155,7 +1167,7 @@
     <plugin filename="shutdown-multicopter-motor-model-system.so" name="gz::sim::systems::MulticopterMotorModel">
       <jointName>rotor_1_joint</jointName>
       <linkName>rotor_1</linkName>
-      <robotNamespace>typhoon</robotNamespace>
+      <robotNamespace>typhoon_h480</robotNamespace>
       <turningDirection>ccw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
@@ -1174,7 +1186,7 @@
     <plugin filename="shutdown-multicopter-motor-model-system.so" name="gz::sim::systems::MulticopterMotorModel">
       <jointName>rotor_2_joint</jointName>
       <linkName>rotor_2</linkName>
-      <robotNamespace>typhoon</robotNamespace>
+      <robotNamespace>typhoon_h480</robotNamespace>
       <turningDirection>ccw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
@@ -1193,7 +1205,7 @@
     <plugin filename="shutdown-multicopter-motor-model-system.so" name="gz::sim::systems::MulticopterMotorModel">
       <jointName>rotor_3_joint</jointName>
       <linkName>rotor_3</linkName>
-      <robotNamespace>typhoon</robotNamespace>
+      <robotNamespace>typhoon_h480</robotNamespace>
       <turningDirection>cw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
@@ -1212,7 +1224,7 @@
     <plugin filename="shutdown-multicopter-motor-model-system.so" name="gz::sim::systems::MulticopterMotorModel">
       <jointName>rotor_4_joint</jointName>
       <linkName>rotor_4</linkName>
-      <robotNamespace>typhoon</robotNamespace>
+      <robotNamespace>typhoon_h480</robotNamespace>
       <turningDirection>ccw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
@@ -1231,7 +1243,7 @@
     <plugin filename="shutdown-multicopter-motor-model-system.so" name="gz::sim::systems::MulticopterMotorModel">
       <jointName>rotor_5_joint</jointName>
       <linkName>rotor_5</linkName>
-      <robotNamespace>typhoon</robotNamespace>
+      <robotNamespace>typhoon_h480</robotNamespace>
       <turningDirection>cw</turningDirection>
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
