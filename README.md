@@ -1,5 +1,5 @@
 # steps to use
-OS: Ubuntu
+OS: Ubuntu22
 
 1. Get Gazebo garden. follow their [installation](https://gazebosim.org/docs/garden/install_ubuntu)
 2. Get px4. Follow their [installation guide](https://docs.px4.io/main/en/sim_gazebo_gz/). 
